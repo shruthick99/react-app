@@ -1,0 +1,211 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #007bff;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensure header is above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .header-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+
+  .header-button:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: #000; /* Text color on hover */
+  }
+  
+  .header-button:active {
+    background-color: #ddd; /* Background color when button is active */
+    color: #000; /* Text color when button is active */
+  }
+
+
+.header-button:focus {
+    background-color: #ddd; /* Background color when button is focused */
+    color: #000; /* Text color when button is focused */
+  }
+
+  
+  
+  .profile-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .logout-button {
+    position: absolute;
+    top: 40px; /* Adjust based on icon size */
+    right: 0;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .header-button:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: #000; /* Text color on hover */
+      }
+      
+      .header-button:active {
+        background-color: #bbb; /* Background color when button is active */
+        color: #000; /* Text color when button is active */
+      }
+      .header-button:focus {
+        background-color: #ddd; /* Background color when button is focused */
+        color: #000; /* Text color when button is focused */
+      }
+        
+  
+    .profile-container {
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .main {
+      padding-top: 90px; /* Increase padding-top for smaller screens */
+    }
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #007bff;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensure header is above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .header-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+  .profile-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .logout-button {
+    position: absolute;
+    top: 40px; /* Adjust based on icon size */
+    right: 0;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .header-button:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: #000; /* Text color on hover */
+      }
+      
+      .header-button:active {
+        background-color: #bbb; /* Background color when button is active */
+        color: #000; /* Text color when button is active */
+      }
+  
+    .profile-container {
+      justify-content: left;
+      width: 100%;
+    }
+  
+    .main {
+      padding-top: 90px; /* Increase padding-top for smaller screens */
+    }
+  }
+    

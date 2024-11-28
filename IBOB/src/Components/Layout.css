@@ -1,0 +1,21 @@
+/* Layout.css */
+
+.layout-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 38px); /* Adjust based on your header and footer height */
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.outlet-container {
+    max-height: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Disables horizontal scrollbar */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff; /* Optional: Background for the outlet content */
+}

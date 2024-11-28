@@ -1,0 +1,123 @@
+.checkin-container {
+  width: 80%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.title{
+    text-align: start;
+}
+
+.inbound {
+  background-color: #d9534f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.info-section {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-columns: 70% 30%; */
+  gap: 30px;
+}
+
+/* Specific classes for rows */
+.row-1 {
+    grid-column: 1 / 3; /* Span both columns */
+    display: grid;
+    grid-template-columns: 70% 30%; /* Adjust for the second row */
+    gap: 30px;
+  }
+
+/* Specific classes for rows */
+.row-2 {
+    grid-column: 1 / 3; /* Span both columns */
+    display: grid;
+    grid-template-columns: 30% 70%; /* Adjust for the second row */
+    gap: 30px;
+  }
+
+.box {
+  background-color: #f4f4f9;
+  /* padding: 20px; */
+  /* border-radius: 8px; */
+  border: 1px solid #ddd;
+  /* background-color: #0056b3; */
+  padding-bottom: 5%;
+}
+
+.update-status select,
+.update-status button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.update-status button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.update-status button:hover {
+  background-color: #0056b3;
+}
+
+.boxHeader{
+    background-color:#007bff;
+    height: 14%;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.boxHeader1{
+    background-color:#007bff;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.driver-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
+    grid-template-rows: repeat(4, auto); /* Creates 4 rows with automatic height */
+    gap: 10px; /* Adds space between grid items */
+    text-align: start; /* Aligns text within grid items to the left */
+    justify-content: center; /* Centers the grid itself horizontally */
+    align-content: center; /* Aligns the grid items to the top */
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+.driver-info-grid p {
+    margin: 0; /* Removes default margin */
+    padding: 5px 0; /* Adds some vertical padding for spacing */
+    text-align: start; /* Aligns text to the left */
+}
+    
+.completeStatus {
+    background-color: darkgreen;
+    color: white;
+    padding: 8px 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 40%;
+  }
+  

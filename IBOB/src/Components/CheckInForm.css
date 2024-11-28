@@ -1,0 +1,206 @@
+/* Check-In Form Container */
+.checkin-form-container {
+    width: 25%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f7f9fc;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.tab.active {
+    background-color: #0056b3;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+}
+
+.checkin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkin-form label {
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+.checkin-form input[type="text"],
+.checkin-form input[type="email"],
+.checkin-form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.checkin-form input[type="file"] {
+    padding: 8px;
+}
+
+.checkin-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 1.2cm;
+}
+
+.checkin-form button:hover {
+    background-color: #0056b3;
+}
+.error{
+    color: red;
+    margin-top: -4%;
+}
+
+/* Loader CSS */
+.loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+  }
+
+  
+
+/* Mobile responsiveness */
+
+@media (min-width: 600px) and (max-width: 1030px) {
+    /* Your styles here */
+    .checkin-form-container {
+        width: 80%;
+        margin-top: 18%;
+        margin-bottom: 15%;
+    }
+}
+
+@media (max-width: 600px) {
+    .checkin-form-container {
+        /* padding: 55%; */
+        margin-top: 50%;
+        width: 80%;
+        margin-bottom: 15%;
+    }
+
+    .tab-container {
+        flex-direction: column;
+    }
+
+    .tab {
+        margin: 5px 0;
+    }
+
+    .checkin-form input[type="text"],
+    .checkin-form input[type="email"],
+    .checkin-form input[type="file"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .checkin-form button {
+        font-size: 16px;
+        padding: 12px;
+        height: auto;
+    }
+}
+
+/* Modal container */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Common modal content styling */
+.modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+/* Success modal styling */
+.modal-content.success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Green border */
+}
+
+/* Error modal styling */
+.modal-content.error {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Red border */
+}
+
+/* Close button styling */
+.modal-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}

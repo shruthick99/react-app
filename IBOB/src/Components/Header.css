@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* Ensures space between the logo and buttons */
+    align-items: center;
+    /* padding: 10px 20px; */
+    background-color: #f8f9fa;
+}
+
+.logo1 {
+    height: 30px; /* Adjust the height of the logo as needed */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.imgDiv {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.header-button:hover {
+    background-color: #0056b3;
+}

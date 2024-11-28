@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  # Frontend Service
+  frontend:
+    build:
+      context: ./IBOB
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - app_network
+
+  # Backend Service
+  backend:
+    build:
+      context: ./check-in
+      dockerfile: Dockerfile
+    environment:
+      SERVER_PORT: 8081
+      # Add AWS region for SSM
+      AWS_REGION: us-east-2  # Replace with your AWS region
+      # Optional: Additional environment variables for backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+  # Database Service
+  db:
+    image: mysql:8.0.33  # Pin a specific MySQL version
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: password  # Optional; unused if credentials come from AWS SSM
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  db_data:
