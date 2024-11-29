@@ -21,9 +21,8 @@ pipeline {
                         else
                             # Navigate to the repository and pull latest changes
                             cd ${APP_DIR}
-                            # Configure git to handle divergent branches
                             git config pull.rebase false
-                            git pull origin master
+                            git pull origin master --allow-unrelated-histories
                         fi
 EOF
                     """
