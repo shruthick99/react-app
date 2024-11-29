@@ -20,6 +20,7 @@ pipeline {
                 echo "Building backend application..."
                 sh """
                 cd ${WORKSPACE}/check-in
+                chmod +x mvnw
                 ./mvnw clean package -DskipTests
                 """
             }
