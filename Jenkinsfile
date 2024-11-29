@@ -21,7 +21,7 @@ pipeline {
                         else
                             # Navigate to the repository and pull latest changes
                             cd ${APP_DIR}
-                            git pull origin main
+                            git pull origin master
                         fi
 EOF
                     """
