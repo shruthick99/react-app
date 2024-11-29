@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo "Cloning repository into Jenkins workspace..."
                 git branch: 'master', url: 'https://github.com/shruthick99/react-app.git'
+                sh "ls -l ${WORKSPACE}"
             }
         }
 
@@ -18,8 +19,19 @@ pipeline {
             steps {
                 echo "Building backend application..."
                 sh """
-                cd ${WORKSPACE}/backend
+                cd ${WORKSPACE}/check-in
                 ./mvnw clean package -DskipTests
+                """
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                echo "Building frontend application..."
+                sh """
+                cd ${WORKSPACE}/IBOB
+                npm install
+                npm run build
                 """
             }
         }
