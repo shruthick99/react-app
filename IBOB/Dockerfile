@@ -4,11 +4,13 @@ FROM node:18-alpine AS build
 # Step 2: Set the working directory
 WORKDIR /app
 
-# Step 3: Copy package.json
-COPY package.json ./
+# Step 3: Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Step 4: Install dependencies
-RUN npm install react-scripts@5.0.1 && npm install
+# Step 4: Clean and install dependencies
+RUN npm cache clean --force
+RUN npm install react-scripts@5.0.1 --save
+RUN npm install
 
 # Step 5: Copy application source code
 COPY . .
