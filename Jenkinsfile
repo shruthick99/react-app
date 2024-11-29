@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        EC2_HOST = '<your-ec2-public-ip>' // Replace with your EC2 IP
-        SSH_CREDENTIALS_ID = '<your-jenkins-ssh-credentials-id>'
-        GITHUB_REPO = '<your-github-repository-url>'
+        EC2_HOST = '3.132.187.127' // Replace with your EC2 IP
+        SSH_CREDENTIALS_ID = 'ec2-ssh-id'
+        GITHUB_REPO = 'https://github.com/shruthick99/react-app.git'
         APP_DIR = '/home/ec2-user/my-app' // Adjust to your desired project folder
     }
 
