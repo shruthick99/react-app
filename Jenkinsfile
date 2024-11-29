@@ -16,14 +16,28 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << 'EOF'
                         # Check if the directory exists
                         if [ ! -d "${APP_DIR}" ]; then
-                            # Clone the repository if it doesn't exist
                             git clone -b master ${GITHUB_REPO} ${APP_DIR}
                         else
-                            # Navigate to the repository and pull latest changes
                             cd ${APP_DIR}
                             git config pull.rebase false
                             git pull origin master --allow-unrelated-histories
                         fi
+EOF
+                    """
+                }
+            }
+        }
+
+        stage('Build Backend') {
+            steps {
+                sshagent(credentials: [SSH_CREDENTIALS_ID]) {
+                    sh """
+                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << 'EOF'
+                        # Navigate to the backend directory
+                        cd ${APP_DIR}/check-in
+
+                        # Run Maven build to generate the .war file
+                        ./mvnw clean package
 EOF
                     """
                 }
