@@ -36,6 +36,9 @@ EOF
                         # Navigate to the backend directory
                         cd ${APP_DIR}/check-in
 
+                        # Set execute permission for the Maven wrapper
+                        chmod +x ./mvnw
+
                         # Run Maven build to generate the .war file
                         ./mvnw clean package
 EOF
