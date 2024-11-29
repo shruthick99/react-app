@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        EC2_HOST = '3.132.187.127' // Replace with your EC2 IP
-        SSH_CREDENTIALS_ID = 'ec2-ssh-id'
-        GITHUB_REPO = 'https://github.com/shruthick99/react-app.git'
+        EC2_HOST = '<your-ec2-public-ip>' // Replace with your EC2 IP
+        SSH_CREDENTIALS_ID = '<your-jenkins-ssh-credentials-id>'
+        GITHUB_REPO = '<your-github-repository-url>'
         APP_DIR = '/home/ec2-user/my-app' // Adjust to your desired project folder
     }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sshagent(credentials: [SSH_CREDENTIALS_ID]) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << EOF
+                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << 'EOF'
                         # Check if the directory exists
                         if [ ! -d "${APP_DIR}" ]; then
                             # Clone the repository if it doesn't exist
@@ -23,7 +23,7 @@ pipeline {
                             cd ${APP_DIR}
                             git pull origin main
                         fi
-                    EOF
+EOF
                     """
                 }
             }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sshagent(credentials: [SSH_CREDENTIALS_ID]) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << EOF
+                    ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << 'EOF'
                         # Navigate to the application directory
                         cd ${APP_DIR}
 
@@ -42,7 +42,7 @@ pipeline {
 
                         # Build and start the application
                         docker-compose up -d --build
-                    EOF
+EOF
                     """
                 }
             }
