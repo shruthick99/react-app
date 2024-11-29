@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         EC2_HOST = '3.132.187.127' // Replace with your EC2 IP
-        SSH_CREDENTIALS_ID = 'ec2-ssh-id'
+        SSH_CREDENTIALS_ID = 'ec2-ssh-id' // Replace with the actual Jenkins credentials ID
         GITHUB_REPO = 'https://github.com/shruthick99/react-app.git'
         APP_DIR = '/home/ec2-user/my-app' // Adjust to your desired project folder
     }
@@ -17,10 +17,12 @@ pipeline {
                         # Check if the directory exists
                         if [ ! -d "${APP_DIR}" ]; then
                             # Clone the repository if it doesn't exist
-                            git clone ${GITHUB_REPO} ${APP_DIR}
+                            git clone -b master ${GITHUB_REPO} ${APP_DIR}
                         else
                             # Navigate to the repository and pull latest changes
                             cd ${APP_DIR}
+                            # Configure git to handle divergent branches
+                            git config pull.rebase false
                             git pull origin master
                         fi
 EOF
