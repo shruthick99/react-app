@@ -4,7 +4,7 @@ pipeline {
     environment {
         EC2_HOST = '3.132.187.127' // Replace with your EC2 IP
         SSH_CREDENTIALS_ID = 'ec2-ssh-id'
-        GITHUB_REPO = ''
+        GITHUB_REPO = 'https://github.com/shruthick99/react-app.git'
         APP_DIR = '/home/ec2-user/my-app' // Adjust to your desired project folder
     }
 
