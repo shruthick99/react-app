@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # Step 4: Clean and install dependencies
 RUN npm cache clean --force
+RUN rm -rf node_modules package-lock.json
 RUN npm install react-scripts@5.0.1 --save
 RUN npm install
 
