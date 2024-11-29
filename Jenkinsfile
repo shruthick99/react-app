@@ -14,6 +14,16 @@ pipeline {
             }
         }
 
+        stage('Build Backend') {
+            steps {
+                echo "Building backend application..."
+                sh """
+                cd ${WORKSPACE}/backend
+                ./mvnw clean package -DskipTests
+                """
+            }
+        }
+
         stage('Transfer Files to EC2') {
             steps {
                 echo "Transferring files to EC2 instance..."
