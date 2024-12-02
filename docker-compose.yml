@@ -33,7 +33,7 @@ services:
     image: mysql:8.0.33  # Pin a specific MySQL version
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: password  # Optional; unused if credentials come from AWS SSM
+      #MYSQL_ROOT_PASSWORD: password  # Optional; unused if credentials come from AWS SSM
       MYSQL_DATABASE: mydb
     ports:
       - "3306:3306"
