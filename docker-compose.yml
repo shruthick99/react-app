@@ -21,6 +21,10 @@ services:
       # Add AWS region for SSM
       AWS_REGION: us-east-2  # Replace with your AWS region
       # Optional: Additional environment variables for backend
+       # datasource:
+ #   url: jdbc:mysql://localhost:3306/mydb?useSSL=false
+ #   username: /check-in/db-username 
+ #   password: /check-in/db-password
     ports:
       - "8081:8081"
     depends_on:
