@@ -16,7 +16,7 @@ public class AWSSSMClient {
         ssmValue = client.getParameter(new GetParameterRequest().withName(ssmParameter)
                 .withWithDecryption(true)).getParameter().getValue();
 
-        System.out.println("ssmValue--"+ssmValue);
+        //System.out.println("ssmValue--"+ssmValue);
 
         return ssmValue;
     }
