@@ -29,9 +29,9 @@ public class DataServiceLocator {
         String dbUserPassword = awsssmClient.getSSMParameterValue("/check-in/db-password");
 
 
-        	//System.out.println("dbUserUrl--"+dbUserUrl);
-        	//System.out.println("dbUserName--"+dbUserName);
-        	//System.out.println("dbUserPassword--"+dbUserPassword);
+        	System.out.println("dbUserUrl--"+dbUserUrl);
+        	System.out.println("dbUserName--"+dbUserName);
+        	System.out.println("dbUserPassword--"+dbUserPassword);
 
 
         dbUserUrl = "jdbc:mysql://"+dbUserUrl+":3306/mydb?useSSL=false";
